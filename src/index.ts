@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/my/user", myUserRoute)
-app.get("/test", async (req: Request, res: Response) => {
-    res.json({ message: "Hello World" });
-})
+app.get("/health", async (req: Request, res: Response) => {
+    res.send({ message: "health OK!" });
+});
 
 app.listen(7000, () => {
     console.log("server started on localhost:7000");
